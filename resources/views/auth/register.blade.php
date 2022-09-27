@@ -25,6 +25,19 @@
               <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
             </div>
             <div class="form-group">
+              <label for="permissions_id">役職</label>
+              <select name='permissions_id' class='form-control'>
+                <option value='' hidden>カテゴリ</option>
+                <option value="3" hidden>マスター</option>
+                <option value="1">選手</option>
+                <option value="2">コーチ</option>
+              </select>
+            </div>
+
+
+
+
+            <div class="form-group">
               <label for="password">パスワード</label>
               <input type="password" class="form-control" id="password" name="password">
             </div>
@@ -33,7 +46,7 @@
               <input type="password" class="form-control" id="password-confirm" name="password_confirmation">
             </div>
             <div class="text-right">
-              <button type="submit" class="btn btn-primary">送信</button>
+              <button type="submit" class="btn btn-dark">送信</button>
             </div>
           </form>
         </div>

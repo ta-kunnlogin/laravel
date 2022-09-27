@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','user_flg','team_id',
+        'name', 'email', 'password', 'permissions_id',
     ];
 
     /**
@@ -44,10 +44,19 @@ class User extends Authenticatable
     public function condition(){
         return $this->hasMany('App\Condition');
     }
-    public function team(){
-        return $this->belongsTo('App\Team', 'team_id', 'id');
+    public function category(){
+        return $this->hasMany('App\Category');
     }
-    public function position(){
-        return $this->belongsTo('App\Position', 'user_flg', 'id');
+    public function permission(){
+        return $this->hasMany('App\Permission');
+    }
+    public function team(){
+        // return $this->belongsTo('app\Team', 'tema_id', 'id');
+        return $this->hasMany('App\Team');
+    }
+    public function group()
+    {
+        // return $this->belongsTo('App\group', 'team_num', 'id');
+        return $this->belongsTo('App\group');
     }
 }

@@ -29,12 +29,20 @@
   </div>
 
   <div class="d-flex justify-content-around mt-3">
+    @can('player')
     <a href="{{route ('delete.condition',['id'=>$condition['id']])}}">
       <button class=" btn btn-danger">削除</button>
     </a>
     <a href="{{route ('edit.condition',['id'=>$condition['id']])}}">
       <button class=" btn btn-secondary">編集</button>
     </a>
+    @endcan
+
+    @can('coach')
+    <a href="{{route ('feedback.condition',['id'=>$condition['id']])}}">
+      <button class=" btn btn-secondary">フィードバック作成</button>
+    </a>
+    @endcan
   </div>
 
 
